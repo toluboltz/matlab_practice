@@ -1,17 +1,20 @@
-close all;
-clear;
+prompt1= 'What is side a?';
+prompt2= 'What is side b?';
 
-prompt = 'Enter the value of a: ';
-a = input(prompt, 's');
-a = str2double(a);
-% I noticed that doing the str2double function will return NaN (not a
-% number). So what I did here in the 'if' statement is to check if it
-% returned NaN and then told it to display a message and exit the program
-% if it does.
+a=input(prompt1,'s');
+a= str2double(a);
+
 if isnan(a)
-    disp('wrong input')
+    disp('Please enter a number');
     return
 end
 
-% else continue with the process below
-disp('continue');
+b=input(prompt2,'s');
+b=str2double(b);
+
+if isnan(b) 
+    disp('Please enter a number');
+    return
+end
+
+c = sqrt(a^2+b^2)
